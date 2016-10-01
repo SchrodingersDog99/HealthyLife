@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  TableViewController.h
 //  HealthyLife
 //
 //  Created by 李书豪 on 10/1/16.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet UITextView *softwareIntro;
+@interface TableViewController : UITableViewController
 
 @end
-

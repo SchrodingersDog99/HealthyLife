@@ -10,6 +10,19 @@
 
 @interface SecondViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *happyIndex;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sadIndex;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *angerIndex;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *surpriseIndex;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *fearIndex;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *disgustIndex;
+
+- (IBAction)submitButton:(UIButton *)sender;
 
 @end
 

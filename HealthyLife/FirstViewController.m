@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"软件介绍";
+    self.softwareIntro.editable = NO;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
