@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoodIndex.h"
 
 @interface SecondViewController : UIViewController
 
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *fearIndex;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *disgustIndex;
+
+@property (strong, nonatomic) NSMutableArray* moodList;
 
 - (IBAction)submitButton:(UIButton *)sender;
 

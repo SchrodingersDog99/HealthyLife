@@ -7,6 +7,8 @@
 //
 
 #import "SecondViewController.h"
+#import "FirstViewController.h"
+#import "MoodIndex.h"
 
 @interface SecondViewController ()
 
@@ -14,9 +16,34 @@
 
 @implementation SecondViewController
 
+@synthesize moodList;
+
+- (SecondViewController*) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:archive]) {
+            self.moodList = [NSKeyedUnarchiver unarchiveObjectWithFile:archive];
+        }
+        else {
+            self.moodList = [[NSMutableArray alloc] init];
+        }
+    }
+    if (self.moodList == nil) self.moodList = [[NSMutableArray alloc] init];
+    
+
+    return self;
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
+    [NSKeyedArchiver archiveRootObject: self.moodList toFile:archive];   //???
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"情绪提交";
+    //self.title = @"情绪提交";
     [self.happyIndex setTitle:@"无" forSegmentAtIndex: 0];
     [self.happyIndex setTitle:@"低" forSegmentAtIndex: 1];
     [self.happyIndex insertSegmentWithTitle:@"中" atIndex:2 animated:NO];
@@ -58,5 +85,23 @@
 
 - (IBAction)submitButton:(UIButton *)sender {
     NSLog(@"Button Pressed!");
+
+    MoodIndex *aMoodIndex = [[MoodIndex alloc] initWithDate:[NSDate date]];
+    aMoodIndex.happiness = @(self.happyIndex.selectedSegmentIndex);
+    aMoodIndex.sadness = @(self.sadIndex.selectedSegmentIndex);
+    aMoodIndex.anger = @(self.angerIndex.selectedSegmentIndex);
+    aMoodIndex.surprise = @(self.surpriseIndex.selectedSegmentIndex);
+    aMoodIndex.fear = @(self.fearIndex.selectedSegmentIndex);
+    aMoodIndex.disgust = @(self.disgustIndex.selectedSegmentIndex);
+    
+    [self.moodList addObject: aMoodIndex];
+    
+    NSFileManager* aFileManager = [[NSFileManager alloc] init];
+    [aFileManager createFileAtPath:aMoodIndex.path contents:[[aMoodIndex description] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+
+    //NSLog(@"HIHIHI");
+    //NSLog(@"%@", @([self.moodList count]));
+    //NSLog(@"%@", [aMoodIndex description]);
+
 }
 @end

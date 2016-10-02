@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "TableViewController.h"
+
+
 
 @interface AppDelegate ()
 
@@ -14,9 +19,18 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+
+/*    FirstViewController *FVC = [[FirstViewController alloc] init];
+    FVC.title = @"软件介绍";
+    
+    SecondViewController *SVC = [[SecondViewController alloc] init];
+    SVC.title = @"情绪提交";
+    
+    TableViewController *TVC = [[TableViewController alloc] init];
+    TVC.title = @"情绪查询";*/
 
     return YES;
 }

@@ -14,10 +14,36 @@
 
 @implementation TableViewController
 
+@synthesize moodList;
+
+- (TableViewController*) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:archive]) {
+            self.moodList = [NSKeyedUnarchiver unarchiveObjectWithFile:archive];
+        }
+        else {
+            self.moodList = [[NSMutableArray alloc] init];
+        }
+    }
+    if (self.moodList == nil) self.moodList = [[NSMutableArray alloc] init];
+    
+    
+    return self;
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
+    [NSKeyedArchiver archiveRootObject:moodList toFile:archive];   //???
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"情绪查询";
+    //NSLog(@"HEHE"); NSLog(@"%@", @([self.moodList count]));
+    //self.title = @"情绪查询";
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,24 +60,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+//#warning Incomplete implementation, return the number of sections
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+//#warning Incomplete implementation, return the number of rows
+    return [self.moodList count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    //cell.textLabel.text = [[self.moodList objectAtIndex:indexPath.row] description];
+    NSFileManager* aFileManager = [[NSFileManager alloc] init];
+    cell.textLabel.text = [[NSString alloc] initWithData:[aFileManager contentsAtPath:[[self.moodList objectAtIndex:indexPath.row] path]] encoding:NSUTF8StringEncoding];
     
+    //cell.textLabel.text = @"233";
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -87,6 +117,9 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath: indexPath animated:YES];
+}
 /*
 #pragma mark - Table view delegate
 

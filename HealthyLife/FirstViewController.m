@@ -14,9 +14,11 @@
 
 @implementation FirstViewController
 
+//@synthesize textValue;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"软件介绍";
+    //self.title = @"软件介绍";
     self.softwareIntro.editable = NO;
     // Do any additional setup after loading the view, typically from a nib.
 }

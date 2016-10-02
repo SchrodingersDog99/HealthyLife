@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--软件介绍-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <frame key="frameInset" minX="31" minY="32" width="313" height="618"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">1. 安装之后首次开启时，需要用户通过权限要求。
+                                <string key="text">1. 安装之后首次开启时，需要用户通过权限要求。
 2. 应用每天在10：00，16：00，22：00时通过通知提醒用户反馈自己在这一段时间内的情绪状态，点击通知便可从六种情绪中选择最接近自己情绪状态的选项。请用户注意：
  (a).情绪状态可多选，每次可选择一种或多种情绪，请尽可能包含从上次提交到目前提交所经历的所有情绪。
  (b).志愿者请每天提交3次情绪状态，实验连续进行20天,共60次。
@@ -36,14 +36,14 @@
 (4) 南孚5号电池12粒装
 (5) 金士顿16G TF(Micro SD)高速存储卡
 6. 联系人：张啸  QQ：935511561，注明：“参与APP测试”； 邮箱：tobexiao1@dislab.nju.edu.cn
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf" userLabel="软件介绍"/>
+                    <tabBarItem key="tabBarItem" title="软件介绍" image="first" id="acW-dT-cKf" userLabel="软件介绍"/>
                     <connections>
                         <outlet property="softwareIntro" destination="5B6-Sj-Jqb" id="9oJ-Lq-uRB"/>
                     </connections>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--情绪提交-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -179,7 +179,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n" userLabel="情绪提交"/>
+                    <tabBarItem key="tabBarItem" title="情绪提交" image="first" id="cPa-gy-q4n" userLabel="情绪提交"/>
                     <connections>
                         <outlet property="angerIndex" destination="xKW-YN-Hde" id="pKL-C0-Mnc"/>
                         <outlet property="disgustIndex" destination="3lb-bW-Mvn" id="zZP-Wk-sCk"/>
@@ -191,9 +191,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="1105" y="268"/>
         </scene>
-        <!--Item-->
+        <!--情绪查询-->
         <scene sceneID="Z2t-NX-pBH">
             <objects>
                 <tableViewController id="rt4-dB-6cN" customClass="TableViewController" sceneMemberID="viewController">
@@ -202,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fzR-jv-cxi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="fzR-jv-cxi">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fzR-jv-cxi" id="LLi-F3-N3H">
@@ -216,11 +216,11 @@
                             <outlet property="delegate" destination="rt4-dB-6cN" id="iWk-do-VrK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="bgH-3t-VzO" userLabel="情绪查询"/>
+                    <tabBarItem key="tabBarItem" title="情绪查询" image="first" id="bgH-3t-VzO" userLabel="情绪查询"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xF-Uv-Nuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="1015"/>
+            <point key="canvasLocation" x="966" y="834"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -245,6 +245,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>

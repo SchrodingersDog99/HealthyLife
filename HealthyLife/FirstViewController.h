@@ -11,6 +11,7 @@
 @interface FirstViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *softwareIntro;
+//@property (strong, nonatomic) NSNumber *textValue;
 
 @end
 
