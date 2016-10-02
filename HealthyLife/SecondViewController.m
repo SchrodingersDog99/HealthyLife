@@ -98,6 +98,8 @@
     
     NSFileManager* aFileManager = [[NSFileManager alloc] init];
     [aFileManager createFileAtPath:aMoodIndex.path contents:[[aMoodIndex description] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    
+    NSLog(@"%@", aMoodIndex.path);
 
     //NSLog(@"HIHIHI");
     //NSLog(@"%@", @([self.moodList count]));

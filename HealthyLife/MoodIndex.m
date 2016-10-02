@@ -54,7 +54,13 @@
 }
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", self.happiness, self.sadness, self.anger, self.surprise, self.fear, self.disgust];
+    NSMutableArray* moodIndexChinese = [[NSMutableArray alloc] init];
+    [moodIndexChinese addObject:@"无"];
+    [moodIndexChinese addObject:@"低"];
+    [moodIndexChinese addObject:@"中"];
+    [moodIndexChinese addObject:@"高"];
+    return ([NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", [moodIndexChinese objectAtIndex:self.happiness.integerValue], [moodIndexChinese objectAtIndex:self.sadness.integerValue], [moodIndexChinese objectAtIndex:self.anger.integerValue], [moodIndexChinese objectAtIndex:self.surprise.integerValue], [moodIndexChinese objectAtIndex:self.fear.integerValue], [moodIndexChinese objectAtIndex:self.disgust.integerValue] ]);
+
 }
 
 
