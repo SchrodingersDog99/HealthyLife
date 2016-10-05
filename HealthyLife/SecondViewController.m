@@ -35,11 +35,6 @@
     return self;
 }
 
-- (void) viewWillDisappear:(BOOL)animated {
-    NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
-    [NSKeyedArchiver archiveRootObject: self.moodList toFile:archive];   //???
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,15 +90,18 @@
     aMoodIndex.disgust = @(self.disgustIndex.selectedSegmentIndex);
     
     [self.moodList addObject: aMoodIndex];
+   
+    NSDate *newdate = [newdate initWithTimeInterval:5*60*60 sinceDate:[self.moodList objectAtIndex:([self.moodList count] - 1)]];
+    NSLog(@"zzz");
     
-    NSFileManager* aFileManager = [[NSFileManager alloc] init];
-    [aFileManager createFileAtPath:aMoodIndex.path contents:[[aMoodIndex description] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
     
-    NSLog(@"%@", aMoodIndex.path);
-
-    //NSLog(@"HIHIHI");
-    //NSLog(@"%@", @([self.moodList count]));
-    //NSLog(@"%@", [aMoodIndex description]);
-
+    if ([newdate compare: aMoodIndex.date] == NSOrderedDescending)  NSLog(@"5 hour");
+    else {
+        NSFileManager* aFileManager = [[NSFileManager alloc] init];
+        [aFileManager createFileAtPath:aMoodIndex.path contents:[[aMoodIndex description] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    
+        NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
+        [NSKeyedArchiver archiveRootObject: self.moodList toFile:archive];   //???
+    }
 }
 @end
