@@ -13,6 +13,7 @@
 
 
 
+
 @interface AppDelegate ()
 
 @end
@@ -22,16 +23,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-
-/*    FirstViewController *FVC = [[FirstViewController alloc] init];
-    FVC.title = @"软件介绍";
-    
-    SecondViewController *SVC = [[SecondViewController alloc] init];
-    SVC.title = @"情绪提交";
-    
-    TableViewController *TVC = [[TableViewController alloc] init];
-    TVC.title = @"情绪查询";*/
-
     return YES;
 }
 
@@ -45,6 +36,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
 
 

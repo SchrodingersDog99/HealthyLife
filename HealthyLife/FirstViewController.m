@@ -7,6 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "AccelerometerCollector.h"
+#import "GyroscopeCollector.h"
+#import "MagnetometerCollector.h"
 
 @interface FirstViewController ()
 
@@ -20,6 +23,15 @@
     [super viewDidLoad];
     //self.title = @"软件介绍";
     self.softwareIntro.editable = NO;
+    AccelerometerCollector* aAccCollector = [AccelerometerCollector sharedInstance];
+    [aAccCollector startAccelerometerRecording];
+    
+    GyroscopeCollector* aGyroCollector = [GyroscopeCollector sharedInstance];
+    [aGyroCollector startGyroscopeRecording];
+    
+    MagnetometerCollector* aMagCollector = [MagnetometerCollector sharedInstance];
+    [aMagCollector startMagnetometerRecording];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 

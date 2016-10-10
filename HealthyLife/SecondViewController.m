@@ -81,6 +81,15 @@
 - (IBAction)submitButton:(UIButton *)sender {
     NSLog(@"Button Pressed!");
 
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:@"你脑残吗？"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"是的!"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
     MoodIndex *aMoodIndex = [[MoodIndex alloc] initWithDate:[NSDate date]];
     aMoodIndex.happiness = @(self.happyIndex.selectedSegmentIndex);
     aMoodIndex.sadness = @(self.sadIndex.selectedSegmentIndex);
@@ -91,17 +100,18 @@
     
     [self.moodList addObject: aMoodIndex];
    
-    NSDate *newdate = [newdate initWithTimeInterval:5*60*60 sinceDate:[self.moodList objectAtIndex:([self.moodList count] - 1)]];
+/*    NSDate *newdate = [[NSDate alloc] init];
+    newdate = [newdate initWithTimeInterval:5*60*60 sinceDate:[self.moodList objectAtIndex:([self.moodList count] - 1)]];
     NSLog(@"zzz");
+*/
     
-    
-    if ([newdate compare: aMoodIndex.date] == NSOrderedDescending)  NSLog(@"5 hour");
-    else {
+  //  if ([newdate compare: aMoodIndex.date] == NSOrderedDescending)  NSLog(@"5 hour");
+    //else {
         NSFileManager* aFileManager = [[NSFileManager alloc] init];
         [aFileManager createFileAtPath:aMoodIndex.path contents:[[aMoodIndex description] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
     
         NSString* archive = [NSString stringWithFormat:@"%@/Documents/MoodArchive", NSHomeDirectory()];
         [NSKeyedArchiver archiveRootObject: self.moodList toFile:archive];   //???
-    }
+    //}
 }
 @end

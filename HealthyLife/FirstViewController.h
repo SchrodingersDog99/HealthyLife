@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccelerometerCollector.h"
+#import "GyroscopeCollector.h"
+#import "MagnetometerCollector.h"
 
 @interface FirstViewController : UIViewController
 

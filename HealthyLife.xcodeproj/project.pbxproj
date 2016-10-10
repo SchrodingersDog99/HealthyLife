@@ -10,6 +10,7 @@
 		FE43070D1D9FC0910037E5DB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE43070B1D9FC0910037E5DB /* TableViewController.m */; };
 		FE43070E1D9FC0910037E5DB /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE43070C1D9FC0910037E5DB /* TableViewController.xib */; };
 		FE4307111DA0D3E50037E5DB /* MoodIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4307101DA0D3E50037E5DB /* MoodIndex.m */; };
+		FE72304D1DA74C430006B89B /* AccelerometerCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FE72304C1DA74C430006B89B /* AccelerometerCollector.m */; };
 		FE9E1AFF1D9FAD1500A46C00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9E1AFE1D9FAD1500A46C00 /* main.m */; };
 		FE9E1B021D9FAD1500A46C00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9E1B011D9FAD1500A46C00 /* AppDelegate.m */; };
 		FE9E1B051D9FAD1500A46C00 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9E1B041D9FAD1500A46C00 /* FirstViewController.m */; };
@@ -19,6 +20,8 @@
 		FE9E1B101D9FAD1500A46C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9E1B0E1D9FAD1500A46C00 /* LaunchScreen.storyboard */; };
 		FE9E1B1B1D9FAD1500A46C00 /* HealthyLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9E1B1A1D9FAD1500A46C00 /* HealthyLifeTests.m */; };
 		FE9E1B261D9FAD1500A46C00 /* HealthyLifeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9E1B251D9FAD1500A46C00 /* HealthyLifeUITests.m */; };
+		FEC3839E1DAB927A00883C66 /* GyroscopeCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC3839D1DAB927A00883C66 /* GyroscopeCollector.m */; };
+		FEC383A21DABAD8D00883C66 /* MagnetometerCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC383A01DABAC0A00883C66 /* MagnetometerCollector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		FE43070C1D9FC0910037E5DB /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		FE43070F1DA0D3E50037E5DB /* MoodIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodIndex.h; sourceTree = "<group>"; };
 		FE4307101DA0D3E50037E5DB /* MoodIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodIndex.m; sourceTree = "<group>"; };
+		FE7230441DA7271A0006B89B /* ICollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICollector.h; path = ../ICollector.h; sourceTree = "<group>"; };
+		FE72304B1DA74C430006B89B /* AccelerometerCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerCollector.h; path = ../AccelerometerCollector.h; sourceTree = "<group>"; };
+		FE72304C1DA74C430006B89B /* AccelerometerCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerCollector.m; path = ../AccelerometerCollector.m; sourceTree = "<group>"; };
 		FE9E1AFA1D9FAD1500A46C00 /* HealthyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9E1AFE1D9FAD1500A46C00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE9E1B001D9FAD1500A46C00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 		FE9E1B211D9FAD1500A46C00 /* HealthyLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9E1B251D9FAD1500A46C00 /* HealthyLifeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyLifeUITests.m; sourceTree = "<group>"; };
 		FE9E1B271D9FAD1500A46C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC3839C1DAB927A00883C66 /* GyroscopeCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroscopeCollector.h; sourceTree = "<group>"; };
+		FEC3839D1DAB927A00883C66 /* GyroscopeCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GyroscopeCollector.m; sourceTree = "<group>"; };
+		FEC3839F1DABAC0A00883C66 /* MagnetometerCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagnetometerCollector.h; sourceTree = "<group>"; };
+		FEC383A01DABAC0A00883C66 /* MagnetometerCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagnetometerCollector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,13 @@
 		FE9E1AFC1D9FAD1500A46C00 /* HealthyLife */ = {
 			isa = PBXGroup;
 			children = (
+				FEC3839C1DAB927A00883C66 /* GyroscopeCollector.h */,
+				FEC3839D1DAB927A00883C66 /* GyroscopeCollector.m */,
+				FE72304B1DA74C430006B89B /* AccelerometerCollector.h */,
+				FE72304C1DA74C430006B89B /* AccelerometerCollector.m */,
+				FEC3839F1DABAC0A00883C66 /* MagnetometerCollector.h */,
+				FEC383A01DABAC0A00883C66 /* MagnetometerCollector.m */,
+				FE7230441DA7271A0006B89B /* ICollector.h */,
 				FE9E1B001D9FAD1500A46C00 /* AppDelegate.h */,
 				FE9E1B011D9FAD1500A46C00 /* AppDelegate.m */,
 				FE9E1B031D9FAD1500A46C00 /* FirstViewController.h */,
@@ -225,6 +242,7 @@
 				TargetAttributes = {
 					FE9E1AF91D9FAD1500A46C00 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4H9L8R54GW;
 						ProvisioningStyle = Automatic;
 					};
 					FE9E1B151D9FAD1500A46C00 = {
@@ -293,11 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9E1B081D9FAD1500A46C00 /* SecondViewController.m in Sources */,
+				FEC383A21DABAD8D00883C66 /* MagnetometerCollector.m in Sources */,
+				FEC3839E1DAB927A00883C66 /* GyroscopeCollector.m in Sources */,
 				FE9E1B021D9FAD1500A46C00 /* AppDelegate.m in Sources */,
 				FE9E1B051D9FAD1500A46C00 /* FirstViewController.m in Sources */,
 				FE43070D1D9FC0910037E5DB /* TableViewController.m in Sources */,
 				FE9E1AFF1D9FAD1500A46C00 /* main.m in Sources */,
 				FE4307111DA0D3E50037E5DB /* MoodIndex.m in Sources */,
+				FE72304D1DA74C430006B89B /* AccelerometerCollector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4H9L8R54GW;
 				INFOPLIST_FILE = HealthyLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SchrodingersDog.HealthyLife;
@@ -457,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4H9L8R54GW;
 				INFOPLIST_FILE = HealthyLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SchrodingersDog.HealthyLife;
